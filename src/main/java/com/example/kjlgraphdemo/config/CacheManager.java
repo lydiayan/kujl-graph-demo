@@ -37,9 +37,8 @@ public class CacheManager {
         log.info("mealplanInfomation:{}",cache_minfomation);
         //生成食谱的食物列表
         List<String> foodList=new ArrayList<>();
-        CACHE.put("foodList", foodList);
-        List<String> c_food_list=(List<String>)CACHE.getIfPresent("foodList");
-        log.info("foodList:{}",c_food_list);
+        CACHE.put("foodList", "");
+        //log.info("foodList:{}",c_food_list);
         //替换的食物
         Map<String,String> replaceFood=new HashMap<>();
         replaceFood.put("source", null);
@@ -48,7 +47,7 @@ public class CacheManager {
         Map<String,String> changeFood=(Map<String,String>) CACHE.getIfPresent("replaceFood");
         log.info("replaceFood:{}",changeFood);
         //需要添加到食材库的食材
-        CACHE.put("addFood", null);
+        CACHE.put("addFood", "");
         //memoryId
         //对话记忆的唯一标识
         String conversantId = UUID.randomUUID().toString();

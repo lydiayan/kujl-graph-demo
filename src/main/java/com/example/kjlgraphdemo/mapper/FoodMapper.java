@@ -14,4 +14,6 @@ public interface FoodMapper {
     @Insert("INSERT INTO foods (foodname, foodurl) VALUES (#{foodname}, #{foodurl})")
     @Options(useGeneratedKeys = true, keyProperty = "foodid")
     int insertFood(FoodIteam food);
+
+    boolean existsByFoodName(String addFood);
 }
